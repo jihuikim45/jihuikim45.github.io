@@ -7,8 +7,8 @@ typora-copy-images-to: ./images/about
 ---
 
 ## Contact
-+ [Blog](https://jihuikim.github.io)
-+ [GitHub @teddylee777](https://github.com/jihuikim)
++ [Blog](https://jihuikim45.github.io)
++ [GitHub @teddylee777](https://github.com/jihuikim45)
 
 ## Career
 LG U+ Why not SW Camp 7기
