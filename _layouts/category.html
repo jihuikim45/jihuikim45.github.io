@@ -1,24 +1,32 @@
 ---
 layout: default
 ---
-<h1> "{{ page.category }}" </h1>
+<h1> {{ page.category }} </h1>
+
+{% if page.category == "code" %}
+  <p>💻 코드에 대한 글입니다!</p>
+{% elsif page.category == "post" %}
+  <p>📚 오늘도 한 편의 블로그 포스트를 만나볼까요?</p>
+{% else %}
+  <p>📁 카테고리별 글입니다!</p>
+{% endif %}
+
 <br>
 <ul class="post-list"> 
   {% assign category = page.category | default: page.title %}
   {% for post in site.categories[category] %}
     <li>
       {% assign date_format = site.cayman-blog.date_format | default: "%b %-d, %Y" %}
-      <span class="post-meta">{{ post.date | date: date_format }}</span>
-      <h2>
-        <a class="post-link" href="{{ post.url | relative_url }}" title="{{ post.title }}">{{ post.title | escape }}</a>
-      </h2>
-      <span class="post-description">{{ post.excerpt | markdownify| truncatewords: 30 }}</span>
+
+      {% if page.category != "code" and page.category != "post" %}
+        <span class="post-meta">{{ post.date | date: date_format }}</span>
+        <span class="post-description">
+          {{ post.excerpt | markdownify | truncatewords: 30 }}
+        </span>
+      {% endif %}
+
       <br>
       <hr>
     </li>
   {% endfor %}
 </ul>
-
-
-
-

@@ -8,16 +8,16 @@ show_downloads: false
 future:         true
 # timezone:       Asia/Seoul
 
-cayman-blog:
+minima:
   date_format: "%b %-d, %Y"
 
-theme: 
+theme: minima   # ← 이거 꼭 지정!
 
 permalink: /:categories/:title
 
 # social
-author: Teddy Lee
-disqus_shortname:   teddylee777
+author: jihuikim45
+disqus_shortname:   jihuikim45
 google_analytics:   UA-111508093-1
 
 repository: jihuikim45/jihuikim.github.io
@@ -28,7 +28,6 @@ lsi: false
 excerpt_separator: "\n\n"
 incremental: false
 
-# root_dir: http://localhost:4000
 category_dir: categories/
 tag_dir: tag/
 categories: [android, aws, data_science, git, jekyll, linux, machine-learning, python, pytorch, review, synology, thoughts]
@@ -42,7 +41,18 @@ plugins:
   - jekyll-feed
   - jekyll-redirect-from
 
+include:
+  - _pages
 
-include: [".htaccess"]
 exclude: ["lib", "config.rb", "Gemfile", "Capfile", "Gemfile.lock", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]
 
+collections:
+  posts:
+    output: true
+
+defaults:                     # ← 요 블럭 꼭 추가!!
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
