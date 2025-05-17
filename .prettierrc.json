@@ -1,0 +1,17 @@
+{
+  "htmlWhitespaceSensitivity": "ignore",
+  "overrides": [
+    {
+      "files": "*.html",
+      "options": {
+        "htmlWhitespaceSensitivity": "ignore"
+      }
+    },
+    {
+      "files": "*.liquid",
+      "options": {
+        "htmlWhitespaceSensitivity": "ignore"
+      }
+    }
+  ]
+}

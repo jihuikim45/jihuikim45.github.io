@@ -1,37 +1,42 @@
 ---
 layout: default
 ---
-
 <div class="tag-page">
   <h1>{{ page.category }}</h1>
 
   {% if page.category == "code" %}
-    <div class="category-intro">
-      <p>💻 코드에 대한 글입니다!</p>
-    </div>
-  {% elsif page.category != "post" %}
-    <div class="category-intro">
-      <p>📚 지금 보고 있는 이 블로그는<br>
-        <strong>"VS Code + GitHub + Jekyll"</strong>을 활용해<br>
-        제가 직접 만든 나만의 기술 블로그입니다.<br>
-        ✨ 지희, 2025
-      </p>
-    </div>
+  <div class="category-intro">
+    <p>💻 코드에 대한 글입니다!</p>
+  </div>
+  {% elsif page.category == "post" %}
+  <div class="category-intro">
+    <p>📚 지금 보고 있는 이 블로그는<br>
+      <strong>"VS Code + GitHub + Jekyll"</strong>을 활용해<br>
+      제가 직접 만든 나만의 기술 블로그입니다.<br>
+      ✨ 지희, 2025
+    </p>
+  </div>
+  {% elsif page.category == "daily" %}
+  <div class="category-intro">
+    <p>🌱 매일 매일 성장 회고</p>
+  </div>
+   {% elsif page.category == "weekly" %}
+  <div class="category-intro">
+    <p>🗓️ 매주 마다 성장 회고</p>
+  </div>
   {% endif %}
 </div>
 
-
-  <div class="tag-posts">
-    {% for post in site.categories[page.category] %}
-      <div class="post-card">
-        <a href="{{ post.url | relative_url }}">
-          <h2>{{ post.title }}</h2>
-          {% unless page.category == "code" or page.category == "post" %}
-            <p>{{ post.excerpt | markdownify | truncatewords: 30 }}</p>
-            <span class="post-date">{{ post.date | date: "%B %d, %Y" }}</span>
-          {% endunless %}
-        </a>
-      </div>
-    {% endfor %}
+<div class="tag-posts">
+  {% for post in site.categories[page.category] %}
+  <div class="post-card">
+    <a href="{{ post.url | relative_url }}">
+      <h2>{{ post.title }}</h2>
+      {% unless page.category == "code" or page.category == "post" %}
+      <p>{{ post.excerpt | markdownify | truncatewords: 30 }}</p>
+      <span class="post-date">{{ post.date | date: "%B %d, %Y" }}</span>
+      {% endunless %}
+    </a>
   </div>
+  {% endfor %}
 </div>

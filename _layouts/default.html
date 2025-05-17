@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "ko" }}">
+<html lang="{{ page.lang | default: site.lang | default: " ko" }}">
 
 <head>
   <!-- Non social metatags -->
@@ -25,19 +25,6 @@
   {% endif %}
 
   <link rel="shortcut icon" href="{{ site.url }}/images/assets/favicon.ico">
-  <link rel="apple-touch-icon" sizes="57x57" href="{{ site.url }}/images/assets/apple-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="{{ site.url }}/images/assets/apple-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="{{ site.url }}/images/assets/apple-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="{{ site.url }}/images/assets/apple-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="{{ site.url }}/images/assets/apple-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="{{ site.url }}/images/assets/apple-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="{{ site.url }}/images/assets/apple-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="{{ site.url }}/images/assets/apple-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="{{ site.url }}/images/assets/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="{{ site.url }}/images/assets/android-icon-192x192.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="{{ site.url }}/images/assets/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="{{ site.url }}/images/assets/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="{{ site.url }}/images/assets/favicon-16x16.png">
   <link rel="manifest" href="{{ site.url }}/images/assets/manifest.json">
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="{{ site.url }}/images/assets/ms-icon-144x144.png">
@@ -53,37 +40,96 @@
       wcs_do();
     }
   </script>
-  {% if page.layout == 'page' %}
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  <script>
-    (adsbygoogle = window.adsbygoogle || []).push({
-      google_ad_client: "ca-pub-5548835221228418",
-      enable_page_level_ads: true
-    });
-  </script>
-  {% endif %}
   <style>
-    .top-banner {
-      width: 100% !important;
-      background-color: #ff9200 !important;
-      text-align: left !important;
-      margin: 5px !important;
-      padding: 10px !important;
+    .site-footer {
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      padding-top: 2rem;
+      margin-top: 2rem;
+      border-top: solid 1px #eff0f1;
+      font-size: 1rem;
+      /* 기본값 for large & medium */
     }
 
-    .top-banner a {
-      color: #fff !important;
-      text-decoration: none !important;
-      text-underline-position: under !important;
-      font-size: 1.1em !important;
+    @media (max-width: 600px) {
+      .site-footer {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+      }
     }
 
-    .top-banner a b {
-      color: #fff !important;
-      font-weight: bold !important;
-      text-decoration: underline !important;
-      text-underline-position: under !important;
-      font-size: 1.2em !important;
+    .site-footer-owner {
+      display: block;
+      font-weight: bold;
+    }
+
+    .site-footer-credits {
+      color: #666;
+    }
+
+    .site-footer .my-span-icon a {
+      text-decoration: none;
+    }
+
+    .site-footer .my-span-icon a:hover {
+      text-decoration: none;
+    }
+
+    /* 기본 large */
+    .site-footer .my-span-icon {
+      padding: 0px 5px;
+    }
+
+    @media (max-width: 1023px) and (min-width: 601px) {
+      .site-footer .my-span-icon {
+        padding: 0px 10px 10px 10px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .site-footer .my-span-icon {
+        padding: 0px 10px 10px 10px;
+      }
+    }
+
+    .site-footer .my-svg-icon {
+      color: #222;
+      /* 대체: $body-text-color */
+      fill: #222;
+      width: 24px;
+      height: 24px;
+      transition: color 0.5s, transform 0.2s ease-out;
+    }
+
+    .site-footer .my-svg-icon:hover {
+      text-decoration: none;
+      color: #333;
+      /* 대체: $section-headings-color */
+      fill: #333;
+      transform: scale(1.25);
+    }
+
+    @media (min-width: 1024px) {
+      .site-footer .my-svg-icon {
+        width: 28px;
+        height: 28px;
+      }
+    }
+
+    @media (max-width: 1023px) and (min-width: 601px) {
+      .site-footer .my-svg-icon {
+        width: 32px;
+        height: 32px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .site-footer .my-svg-icon {
+        width: 36px;
+        height: 36px;
+      }
     }
   </style>
   {% if page.use_math %}
@@ -107,6 +153,7 @@
     <section class="main-content">
       {{ content }}
 
+
       <footer class="site-footer">
 
         <!-- Github icon -->
@@ -123,7 +170,7 @@
         <!-- RSS icon -->
         {% if site.gems contains "jekyll-feed" %}
         <span class="my-span-icon">
-          <a href="{{ "/feed.xml" | relative_url }}" aria-label="RSS feed"
+          <a href="{{ " /feed.xml" | relative_url }}" aria-label="RSS feed"
             title="{{ site.github.owner_name }}'s RSS feed">
             <svg class="my-svg-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
               <path
@@ -146,6 +193,9 @@
         </span>
         {% endif %}
 
+        <div class='last-comment'>
+          <p>데이터 분석, 머신러닝, 딥러닝의 대중화를 꿈 꿉니다.⭐️</p>
+        </div>
       </footer>
     </section>
     {% endif %}
@@ -173,7 +223,7 @@
         <!-- RSS icon -->
         {% if site.gems contains "jekyll-feed" %}
         <span class="my-span-icon">
-          <a href="{{ "/feed.xml" | relative_url }}" aria-label="RSS feed"
+          <a href="{{ " /feed.xml" | relative_url }}" aria-label="RSS feed"
             title="{{ site.github.owner_name }}'s RSS feed">
             <svg class="my-svg-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
               <path
@@ -196,6 +246,10 @@
         </span>
         {% endif %}
 
+        <div class='last-comment'>
+          <p>🌟 데이터 분석, 머신러닝, 딥러닝의 대중화를 꿈 꿉니다. 🌙</p>
+        </div>
+
       </footer>
     </section>
     {% endif %}
@@ -205,36 +259,29 @@
         <div class="sidebar-nav-item">
           Site
         </div>
+
         <nav class="content-ul">
-          <a href="{{ "/" | relative_url }}">{{ "Home" | escape }}</a>
-          <a href="{{ "/about" | relative_url }}">{{ "About" | escape }}</a>
+          <a href="{{ " /" | relative_url }}">{{ "Home" | escape }}</a>
+          <a href="{{ " /about" | relative_url }}">{{ "About" | escape }}</a>
           <a href="https://github.com/jihuikim45/">{{ "Github" | escape }}</a>
           <a href="mailto:kimjihui45@gmail.com">{{ "Contact" | escape }}</a>
         </nav>
 
         <br>
         <div class="sidebar-nav-item">
-  Category
-</div>
-<nav class="content-ul">
-  {% for category in site.categories %}
-    {% assign category_name = category | first %}
-    {% assign category_count = category | last | size %}
+          Category
+        </div>
+        <nav class="content-ul">
+          {% for category in site.categories %}
+          <a href="{{ root_url }}/{{ site.category_dir }}{{ category | first }}" class="sidebar-nav-item pl-3rem">
 
-    {% if category_name == "tag" %}
-      <a href="/tags/post" class="sidebar-nav-item pl-3rem">
-        {{ category_name }}
-        <span class="badge">({{ category_count }})</span>
-      </a>
-    {% else %}
-      <a href="{{ root_url }}/{{ site.category_dir }}{{ category_name }}" class="sidebar-nav-item pl-3rem">
-        {{ category_name }}
-        <span class="badge">({{ category_count }})</span>
-      </a>
-    {% endif %}
-  {% endfor %}
-</nav>
+            {{ category | first }}
 
+
+            <span class="badge">({{ category | last | size }})</span>
+          </a>
+          {% endfor %}
+        </nav>
 
       </div>
 

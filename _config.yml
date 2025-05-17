@@ -1,36 +1,49 @@
 title: 지희’s Tech Note
 description: 데이터 분석가가 되는 그날까지
 
-url:   https://jihuikim45.github.io
+url: https://jihuikim45.github.io
 image: /images/logo.png
 
 show_downloads: false
-future:         true
+future: true
 # timezone:       Asia/Seoul
 
 minima:
   date_format: "%b %-d, %Y"
 
-theme: minima   # ← 이거 꼭 지정!
+theme: minima
 
 permalink: /:categories/:title
 
 # social
 author: jihuikim45
-disqus_shortname:   jihuikim45
-google_analytics:   UA-111508093-1
+disqus_shortname: jihuikim45
+google_analytics: UA-111508093-1
 
 repository: jihuikim45/jihuikim.github.io
 
 highlighter: rouge
-markdown:    kramdown
+markdown: kramdown
 lsi: false
 excerpt_separator: "\n\n"
 incremental: false
 
 category_dir: categories/
-tag_dir: tag/
-categories: [android, aws, data_science, git, jekyll, linux, machine-learning, python, pytorch, review, synology, thoughts]
+tag_dir: tags/
+categories:
+  [
+    aws,
+    data_science,
+    git,
+    linux,
+    machine-learning,
+    python,
+    pandas,
+    algorithm,
+    daily,
+    code,
+    weekly,
+  ]
 
 paginate: 10
 paginate_path: "/posts/page:num/"
@@ -44,22 +57,45 @@ plugins:
 include:
   - _pages
 
-exclude: ["lib", "config.rb", "Gemfile", "Capfile", "Gemfile.lock", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]
+exclude:
+  [
+    "lib",
+    "config.rb",
+    "Gemfile",
+    "Capfile",
+    "Gemfile.lock",
+    "config",
+    "log",
+    "Rakefile",
+    "Rakefile.rb",
+    "tmp",
+    "less",
+    "*.sublime-project",
+    "*.sublime-workspace",
+    "test",
+    "spec",
+    "Gruntfile.js",
+    "package.json",
+    "node_modules",
+  ]
 
-collections:
-  posts:
-    output: true
+permalink: /:categories/:title
 
-defaults:                     # ← 요 블럭 꼭 추가!!
+defaults:
   - scope:
-      path: ""
+      path: "_posts/daily"
       type: "posts"
     values:
-      layout: "post"
-      permalink: /post/:title/
-      tag_dir: tags
-
+      categories: [daily]
   - scope:
-      path: ""
+      path: "_posts/weekly"
+      type: "posts"
     values:
-      css: "/assets/css/custom.css"
+      categories: [weekly]
+  - scope:
+      path: "_posts/code"
+      type: "posts"
+    values:
+      categories: [code]
+
+# css: "/assets/css/custom.css"
