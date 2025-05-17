@@ -1,0 +1,5 @@
+/* 모든 본문 텍스트를 16px로 통일 */
+body {
+  font-size: 16px;
+  line-height: 1.7;
+}

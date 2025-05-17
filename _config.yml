@@ -56,3 +56,8 @@ defaults:                     # ← 요 블럭 꼭 추가!!
       type: "pages"
     values:
       layout: "default"
+
+  - scope:
+      path: ""
+    values:
+      css: "/assets/css/custom.css"
