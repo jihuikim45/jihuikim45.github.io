@@ -53,9 +53,11 @@ collections:
 defaults:                     # ← 요 블럭 꼭 추가!!
   - scope:
       path: ""
-      type: "pages"
+      type: "posts"
     values:
-      layout: "default"
+      layout: "post"
+      permalink: /post/:title/
+      tag_dir: tags
 
   - scope:
       path: ""
