@@ -50,6 +50,29 @@ $on-laptop:        54em !default;
 ;
 
 
+.home-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem 1rem; margin-top: 2rem;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.home-intro {
+  background-color: #fbf7fc;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+
 .page-content-header {
   background-color: #f5f0ff; /* 연보라 (감성톤) */
   border: 1px solid rgba(0, 0, 0, 0.15)!important;
@@ -75,5 +98,107 @@ $on-laptop:        54em !default;
   .page-content-header-date {
     font-size: 0.95rem;
     color: #777;
+  }
+}
+
+.tag-page {
+  text-align: center;
+  margin-top: 2rem;
+
+  h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #2b2b2b;
+  margin-bottom: 1.5rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.05); /* soft shadow */
+  font-family: 'Pretendard', sans-serif; /* 감성 폰트 (선택사항) */
+}
+}
+
+.tag-posts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 2rem;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.post-card {
+  margin-bottom: 1.5rem;
+  width: 80%;
+  max-width: 700px;
+  background: white;
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  text-align: left;
+  transition: transform 0.2s ease;
+
+
+.post-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.post-card:hover {
+  transform: translateY(-3px);
+}
+
+  &:hover {
+    transform: translateY(-4px);
+}
+
+.post-card h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+  a {
+    text-decoration: none;
+    color: #2b2b2b;
+
+    h2 {
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-align: left;
+      margin: 0;
+    }
+
+    p {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 0.5rem;
+    }
+
+    .post-date {
+      font-size: 0.85rem;
+      color: #888;
+    }
+  }
+}
+
+.category-intro {
+  font-size: 1.05rem;
+  color: #444;
+  background-color: #fbf7fc;
+  padding: 1.5rem;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 12px;
+  margin: 0 auto 2rem auto;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+  p {
+    line-height: 1.7;
+    font-style: italic;
+  }
+
+  strong {
+    color: #7a5fff;
   }
 }

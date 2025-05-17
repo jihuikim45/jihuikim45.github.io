@@ -2,39 +2,39 @@
 layout: default
 ---
 
-<div>
+<!-- ✅ 모든 걸 하나로 감싸는 컨테이너 -->
+<div class="home-container">
 
-  {{ content }}
+  <!-- 💜 연보라 소개 박스 -->
+  <div class="home-intro">
+    <p>💻 이 블로그는 <strong>"VS Code + GitHub + Jekyll"</strong>을 활용해 만든 기술 블로그입니다.</p>
+    <p>📝 다양한 IT 주제들을 정리하고 기록하고 있어요. 오른쪽 카테고리를 눌러보세요!</p>
+  </div>
 
-  <!-- This loops through the paginated posts -->
-  {% for post in paginator.posts %}
-  <ul class="post-list">
-    <li>
-      {% assign date_format = site.cayman-blog.date_format | default: "%b %-d, %Y" %}
-      <span class="post-meta">{{ post.date | date: date_format }}</span>
-
-      <h2>
-        <a class="post-link" href="{{ post.url | relative_url }}" title="{{ post.title }}">{{ post.title | escape }}</a>
-      </h2>
-
-      <span class="post-description">{{ post.excerpt | markdownify |  truncatewords: 30 }}</span>
-      <hr>
-    </li>
-  </ul>
-  {% endfor %}
-
-  {% if paginator.total_pages > 1 %}
-  <div class="pagination">
-    {% for page in (1..paginator.total_pages) %}
-    {% if page == paginator.page %}
-    <em><b>{{ page }}</b></em>
-    {% elsif page == 1 %}
-    <a href="{{ site.url }}">{{ page }}</a>
-    {% else %}
-    <a href="{{ site.paginate_path | relative_url | replace: ':num', page }}">{{ page }}</a>
-    {% endif %}
+  <!-- 🔁 포스트 카드 목록 -->
+  <div class="post-card-list">
+    {% for post in paginator.posts %}
+      <div class="post-card">
+        <a href="{{ post.url | relative_url }}">
+          <h3>{{ post.title }}</h3>
+        </a>
+      </div>
     {% endfor %}
   </div>
+
+  <!-- 📄 페이지네이션 -->
+  {% if paginator.total_pages > 1 %}
+    <div class="pagination">
+      {% for page in (1..paginator.total_pages) %}
+        {% if page == paginator.page %}
+          <em><b>{{ page }}</b></em>
+        {% elsif page == 1 %}
+          <a href="{{ site.url }}">{{ page }}</a>
+        {% else %}
+          <a href="{{ site.paginate_path | relative_url | replace: ':num', page }}">{{ page }}</a>
+        {% endif %}
+      {% endfor %}
+    </div>
   {% endif %}
 
 </div>
