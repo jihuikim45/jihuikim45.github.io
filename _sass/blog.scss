@@ -48,3 +48,32 @@ $on-laptop:        54em !default;
   "blog/base",
   "blog/layout"
 ;
+
+
+.page-content-header {
+  background-color: #f5f0ff; /* 연보라 (감성톤) */
+  border: 1px solid rgba(0, 0, 0, 0.15)!important;
+  border-radius: 30px;
+  padding: 2rem;
+  margin: 2rem 0;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+  .page-content-header-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-style: italic;
+    color: #555;
+    font-size: 1rem;
+    margin: 0.5rem 0;
+  }
+
+  .page-content-header-date {
+    font-size: 0.95rem;
+    color: #777;
+  }
+}
