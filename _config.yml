@@ -53,6 +53,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-redirect-from
+  - jekyll-livereload
 
 include:
   - _pages
