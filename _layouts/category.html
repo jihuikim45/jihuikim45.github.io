@@ -29,7 +29,7 @@ layout: default
 
 <div class="tag-posts">
   {% for post in site.categories[page.category] %}
-  <div class="post-card">
+  <div class="tag-card">
     <a href="{{ post.url | relative_url }}">
       <h2>{{ post.title }}</h2>
       {% unless page.category == "code" or page.category == "post" %}
