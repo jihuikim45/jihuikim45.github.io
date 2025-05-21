@@ -17,7 +17,7 @@
   {% assign page-title = site.title | escape %}
   {% endif %}
   <title>{{ page-title }}</title>
-  {% include social-metatags.html %}
+  {% seo %}
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
   {% if site.gems contains "jekyll-feed" %}
   <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}"
@@ -30,7 +30,23 @@
   <meta name="msapplication-TileImage" content="{{ site.url }}/images/assets/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
   <meta name="naver-site-verification" content="4c79ddf46867bd47227c151942f0acc67766e5e5" />
-  <meta property="og:image" content="{{ site.url }}/images/assets/thumbnail.png">
+  <meta property="og:image" content="{{ site.url }}{{ site.logo }}">
+
+
+  <!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ page.title | default: site.title }}">
+<meta property="og:description" content="{{ page.description | default: site.description }}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:image" content="{{ site.url }}{{ site.logo }}">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ page.title | default: site.title }}">
+<meta name="twitter:description" content="{{ page.description | default: site.description }}">
+<meta name="twitter:image" content="{{ site.url }}{{ site.logo }}">
+
+
 
 
   <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">

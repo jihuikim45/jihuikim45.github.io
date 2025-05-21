@@ -2,7 +2,7 @@ title: 지희’s Tech Note
 description: 데이터 분석가가 되는 그날까지
 
 url: https://jihuikim45.github.io
-image: /images/logo.png
+logo: /images/assets/thumbnail.png
 
 show_downloads: false
 future: true
@@ -80,7 +80,7 @@ exclude:
     "node_modules",
   ]
 
-permalink: /:categories/:title
+
 
 defaults:
   - scope:
